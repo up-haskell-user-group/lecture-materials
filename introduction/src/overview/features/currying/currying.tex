@@ -1,0 +1,48 @@
+\subsection{Currying \& Higher Order Functions}
+
+\begin{frame}[fragile]
+  \frametitle{Currying}
+  \begin{itemize}
+    \item Mapping multi-arg func onto single-arg func 
+      \begin{itemize}
+        \item Returns func with one less parameter.
+        \item Supports partial application.
+        \item All Haskell functions: single parameter.
+      \end{itemize}
+    \item Example:
+\begin{lstlisting}    
+max :: Int -> Int -> Int
+\end{lstlisting}
+      \begin{itemize}
+        \item receives {\scriptsize \verb+Int+} as parameter
+        \item returns function {\scriptsize \verb+Int -> Int+}
+      \end{itemize}    
+    \item Direct support for higher-order functions
+      \begin{itemize}
+        \item take function as parameter and/or
+        \item return function.
+      \end{itemize}     
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Example: zipWith}
+
+  \begin{itemize}
+    \item \texttt{zipwith} = function which takes \& returns function :
+  \end{itemize}
+
+  \lstinputlisting{../../../examples/_zipWith.hs}
+  \begin{itemize}
+    \item Usage:
+  \end{itemize}
+ \begin{lstlisting}
+:l _zipWith
+   Compiling Main ( _zipWith.hs, interpreted )
+Ok, modules loaded: Main.
+
+_zipWith (*) [1,2,3] [5,6]
+[5,12]  
+\end{lstlisting}
+  
+\end{frame}

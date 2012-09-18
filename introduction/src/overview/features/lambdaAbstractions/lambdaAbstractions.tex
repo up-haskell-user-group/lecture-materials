@@ -1,0 +1,24 @@
+\section{Lambda abstractions}
+
+\begin{frame}[fragile]
+  \frametitle{Lambda abstractions}
+  \begin{itemize}
+    \item Anonymous functions.
+    \item specify mapping is sufficient
+      \begin{itemize}
+        \item e.g.\ $\lambda x \rightarrow x \times x$
+        \item Haskell:
+\begin{lstlisting}
+\x -> x*x
+\end{lstlisting}
+        \item need not give function a name
+      \end{itemize}
+    \item Normally lambdas are passed to higher order functions:
+\begin{lstlisting}
+map (\x -> x*x) [1,2,3]
+
+[1,4,9]
+\end{lstlisting}
+  \end{itemize}
+  
+\end{frame}

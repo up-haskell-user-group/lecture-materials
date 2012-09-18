@@ -1,0 +1,47 @@
+% 1: Regular slides
+%------------------
+\documentclass[xcolor=svgnames,10pt]{beamer}
+
+% 2:  Handouts
+%------------------
+%\documentclass[handout,xcolor=svgnames]{beamer}
+%\usepackage{handoutWithNotes}
+%\pgfpagesuselayout{4 on 1 with notes}[a4paper,border shrink=5mm]
+
+% 3: Article style
+%------------------
+%\documentclass[a4]{report}
+%\usepackage{beamerarticle}
+
+\def\docTitle{Introduction to Haskell Seminar Series}
+\def\docAuthor{Fritz Solms}
+
+\usepackage{import}
+\subimport{../../../../resources/latex/}{slides.tex}
+
+\definecolor{lbcolor}{rgb}{0.9,0.9,0.9}  
+\lstset{  
+language=Haskell,  
+tabsize=3,  
+basicstyle=\scriptsize,
+numberstyle=\scriptsize,
+backgroundcolor=\color{lbcolor},  
+showstringspaces=false
+%numbers=left,
+stepnumber=1,
+frame=shadowbox,
+breaklines=true}
+
+
+\begin{document}
+
+  \maketitle
+  
+  \import{}{overview}
+
+
+%\footbibliographystyle{plain}  %%abbrv
+%\footbibliography{../../../bibliography}
+
+\end{document}
+

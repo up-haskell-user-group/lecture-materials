@@ -1,0 +1,56 @@
+\section{SmallestDivider}
+
+\begin{frame}[fragile]
+  \frametitle{Definition: Smallest Divider}
+  \begin{definition}
+    \begin{itemize}
+      \item For $n \in \mathbb{N}, n>1$
+        \begin{itemize}
+          \item Let $d = \mbox{LD}(n)$ as smallest 
+            $d \in \mathbb{N} \mid 1 < d \le \mathbb{N}, \frac{n}{d} = a \in \mathbb{N}$
+          \item Let $\mathbb{P}(n)$ as the set of prime numbers of $n$. 
+        \end{itemize}
+    \end{itemize}
+  \end{definition}
+  \begin{itemize}
+    \item $d = \mbox{LD}(n)$ exists $\forall n \in \mathbb{N}, n > 1$
+      \begin{itemize}
+        \item $d = n$ is always a divider.
+        \item $\Rightarrow$ set of dividers of $n$ is non-empty.
+      \end{itemize}  
+    \item Defining {\scriptsize\texttt{divides}} in \emph{Haskell}:  
+	  \begin{lstlisting}
+	    divides d n = rem n d == 0
+	  \end{lstlisting}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Some useful observations:}
+  \begin{theorem}
+    \begin{enumerate}[a)]
+      \item $d = \mbox{LD}(n)$ is a \emph{prime} number.
+      \item if $n$ not \emph{prime}, then $(\mbox{LD}(n))^2 \le n$.
+    \end{enumerate}
+  \end{theorem}
+  \begin{proof}
+    \begin{enumerate}[a)]
+      \item Proof by contradiction
+        \begin{itemize}
+	      \item Assume $d = \mbox{LD}(n)$ is not \emph{prime}.
+	      \item The $\exists a,b \in \mathbb{N} \mid d = a \cdot b, 1<a<d$
+	      \item But then $a<d \in \mathbb{N}$ divides $n$.
+	      \item This contradicts  $d = \mbox{LD}(n)$.
+	      \item $\Rightarrow d = \mbox{LD}(n)$ must be \emph{prime}.
+	    \end{itemize}
+	  \item Proof by deduction
+	    \begin{itemize}
+	      \item Assume $n$ not \emph{prime}.
+	      \item Let $p = \mbox{LD}(n)$
+	      \item Then $\exists a \in \mathbb{N}, a>1 \mid n = p \cdot a$. $\Rightarrow a$ divides $n$.
+	      \item But $p>1$ smallest divisor of $n$. $\Rightarrow p\le a$
+	      \item $\Rightarrow p^2 \le p \cdot a = n$ $\Rightarrow (\mbox{LD}(n))^2 \le n$
+	    \end{itemize}  
+    \end{enumerate}
+  \end{proof}
+\end{frame}

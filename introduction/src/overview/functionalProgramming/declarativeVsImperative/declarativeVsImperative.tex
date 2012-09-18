@@ -1,0 +1,25 @@
+\subsection{Declarative versus Imperative Programming}
+
+\begin{frame}[fragile]
+  \frametitle{Declarative versus Imperative Programming}
+  \begin{itemize}
+    \item {\bf Imperative Programming}
+	  \begin{itemize}
+	    \item Program $=$ instructions what to do.
+	    \item Result $=$ consequences of specified activities
+	    \item imperative programs are composed of statements which change global state when executed. 
+	  \end{itemize}
+    \item {\bf Declarative Programming}
+	  \begin{itemize}
+	    \item Programs are executed by evaluating expressions.
+	    \item No mutable state. 
+	    \item Specify desired result / constraints
+	  \end{itemize}
+\begin{lstlisting}
+factorial :: Integer -> Integer
+factorial 0 = 1
+factorial n = n * factorial (n-1)
+\end{lstlisting}  
+	\end{itemize}	  
+
+\end{frame}

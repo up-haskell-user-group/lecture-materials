@@ -1,0 +1,66 @@
+\subsection{Packaging in Haskell}
+
+\begin{frame}[fragile]
+  \frametitle{Modules}
+  \begin{itemize}
+    \item A source unit (a file)
+    \item Exports selected functions and types.
+\begin{lstlisting}
+module Some.Module (func1, type1, ...)
+
+func1 :: ...
+ 
+\end{lstlisting}
+	 \item Import
+	   \begin{itemize}
+	     \item Unqualified import:
+\begin{lstlisting}
+import Some.Module
+
+or
+
+import Some.Module (func1) 
+\end{lstlisting}
+         \item Qualified import: 
+
+\begin{lstlisting}
+import qualified Some.Module
+
+Some.Module.func1 as SM
+
+SM.func1 ...
+\end{lstlisting}
+
+      \end{itemize}
+  \end{itemize}
+  
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Packages}
+  \begin{itemize}
+    \item A package is a unit of distribution.
+      \begin{itemize}
+        \item Collection of modules (files).
+      \end{itemize}
+    \item Built via Cabal.
+    \item Package meta-data specification:
+      \begin{itemize}
+        \item globally unique package name,
+        \item version id,
+        \item dependency list (referrring to package dependencies),
+        \item list of exposed modules.
+      \end{itemize}
+    \item Unit of distribution with Cabal-based metadata and build support.
+    \item Collection of modules.  
+  \end{itemize}
+{\small  
+\begin{lstlisting}
+import Some.Module
+
+or
+
+import Some.Module (func1) 
+\end{lstlisting}
+}  
+\end{frame}
